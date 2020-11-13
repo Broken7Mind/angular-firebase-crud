@@ -1,0 +1,72 @@
+<p>policy-list works!</p>
+<table border=1>
+    <thead>
+      <th>Number</th>
+      <th>Created At</th>
+      <th>Expire At</th>
+      <th>Amount</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let policy of policies">
+        <td>{{policy.policyNumber}}</td>
+        <td>{{policy.creationDate}}</td>
+        <td>{{policy.expireDate}}</td>
+        <td>{{policy.policyAmount}}</td>
+        <td>
+            <button (click)="delete(policy.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+</table>
+<!-- im a ghost, now you see now you don't -->
+<hr>
+
+<h2>Alta de nuevo Policy</h2>
+
+<div class="submit-form">
+    <div class="form-group">
+        <input
+        type="text"
+        class="form-control"
+        id="policyNumber"
+        [(ngModel)]="politicas.policyNumber"
+        name="policyNumber"
+        placeholder="policyNumber"
+        />
+    </div>
+
+    <div class="form-group">
+        <input
+        type="date"
+        class="form-control"
+        id="creationDate"
+        [(ngModel)]="politicas.creationDate"
+        name="creationDate"
+        placeholder="creationDate"
+        />
+    </div>
+    <div class="form-group">
+        <input
+        type="date"
+        class="form-control"
+        id="expireDate"
+        [(ngModel)]="politicas.expireDate"
+        name="expireDate"
+        placeholder="expireDate"
+        />
+    </div>
+
+    <div class="form-group">
+        <input
+        type="number"
+        class="form-control"
+        id="policyAmount"
+        [(ngModel)]="politicas.policyAmount"
+        name="policyAmount"
+        placeholder="policyAmount"
+        />
+    </div>
+
+    <button (click)="create()" class="btn btn-success">Enviar</button>
+</div>
+<br><br>
